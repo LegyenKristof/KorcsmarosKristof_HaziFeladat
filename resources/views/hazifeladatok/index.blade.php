@@ -35,8 +35,9 @@
                 <form method="POST" action="{{ route('hazifeladatok.destroy', $hazifeladat->id) }}">
                     @csrf
                     @method('DELETE')
-                    <button type="submit">Törlés</button>
+                    <input type="submit" value="Törlés">
                 </form>
+                <a href="{{ route('hazifeladatok.edit', $hazifeladat->id) }}"><button>Módosítás</button></a>
                 </td>
            </tr>
            @endforeach

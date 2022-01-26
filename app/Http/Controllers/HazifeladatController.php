@@ -51,7 +51,7 @@ class HazifeladatController extends Controller
      */
     public function show($id)
     {
-        //
+
     }
 
     /**
@@ -62,7 +62,8 @@ class HazifeladatController extends Controller
      */
     public function edit($id)
     {
-
+        $hazi = Hazifeladat::find($id);
+        return view("hazifeladatok/edit", ["hazi" => $hazi]);
     }
 
     /**
@@ -74,7 +75,11 @@ class HazifeladatController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $data = $request->only(["url", "ertekeles", "pontszam"]);
+        $hazi = Hazifeladat::find($id);
+        $hazi->fill($data);
+        $hazi->save();
+        return redirect("hazifeladatok");
     }
 
     /**
