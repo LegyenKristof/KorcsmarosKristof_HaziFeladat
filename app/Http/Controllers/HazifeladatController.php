@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\HazifeladatRequest;
 use App\Models\Hazifeladat;
 use Illuminate\Http\Request;
 
@@ -34,7 +35,7 @@ class HazifeladatController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(HazifeladatRequest $request)
     {
         $data = $request->only(["url", "ertekeles", "pontszam"]);
         $hazi = new Hazifeladat();
@@ -73,7 +74,7 @@ class HazifeladatController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(HazifeladatRequest $request, $id)
     {
         $data = $request->only(["url", "ertekeles", "pontszam"]);
         $hazi = Hazifeladat::find($id);

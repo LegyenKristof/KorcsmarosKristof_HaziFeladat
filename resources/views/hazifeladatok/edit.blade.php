@@ -14,19 +14,28 @@
             <span>
                 URL:
             </span>
-            <input type="url" name="url" value="{{$hazi->url}}">
+            <input type="text" name="url" value="{{$hazi->url}}">
+            @error('url')
+                <p>{{ $message }}</p>
+            @enderror
         </div>
         <div>
             <span>
                 Értékelés:
             </span>
             <input type="text" name="ertekeles" value="{{$hazi->ertekeles}}">
+            @error('ertekeles')
+                <p>{{ $message }}</p>
+            @enderror
         </div>
         <div>
             <span>
                 Pontszám:
             </span>
             <input type="number" name="pontszam" value="{{$hazi->pontszam}}">
+            @error('pontszam')
+                <p>{{ $message }}</p>
+            @enderror
         </div>
         <div>
             <input type="submit">
