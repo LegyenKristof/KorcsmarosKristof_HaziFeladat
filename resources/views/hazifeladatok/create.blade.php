@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        span{
+            width: 100px;
+            display: inline-block;
+        }
+    </style>
 </head>
 <body>
     <form method="POST" action="{{ route('hazifeladatok.store') }}">
@@ -38,7 +44,7 @@
             @enderror
         </div>
         <div>
-            <input type="submit">
+            <input type="submit" value="Beadás">
         </div>
     </form>
 </body>

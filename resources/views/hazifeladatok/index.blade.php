@@ -10,12 +10,18 @@
             border: 1px black solid;
             padding: 10px;
         }
+
+        #hozzaad{
+            width: 100%;
+            height: 50px;
+            font-size: 20pt;
+        }
     </style>
 </head>
 <body>
     <table>
         <tr>
-            <td colspan="5"><a href="{{route('hazifeladatok.create')}}"><button style="width: 100%; height: 50px;font-size: 20pt;">Új házifeladat beadása</button></a></td>
+            <td colspan="5"><a href="{{route('hazifeladatok.create')}}"><button id="hozzaad">Új házifeladat beadása</button></a></td>
         </tr>
         <tr>
             <th>ID</th>
