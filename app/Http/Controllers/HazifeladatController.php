@@ -15,7 +15,7 @@ class HazifeladatController extends Controller
     public function index()
     {
         $hazifeladatok = Hazifeladat::all();
-        return view("hazifeladatok", ["hazifeladatok" => $hazifeladatok]);
+        return view("hazifeladatok/index", ["hazifeladatok" => $hazifeladatok]);
     }
 
     /**
@@ -25,7 +25,7 @@ class HazifeladatController extends Controller
      */
     public function create()
     {
-        //
+        return view("hazifeladatok/create");
     }
 
     /**
@@ -36,7 +36,11 @@ class HazifeladatController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->only(["url", "ertekeles", "pontszam"]);
+        $hazi = new Hazifeladat();
+        $hazi->fill($data);
+        $hazi->save();
+        return redirect("hazifeladatok");
     }
 
     /**
@@ -58,7 +62,7 @@ class HazifeladatController extends Controller
      */
     public function edit($id)
     {
-        //
+
     }
 
     /**
@@ -82,6 +86,6 @@ class HazifeladatController extends Controller
     public function destroy($id)
     {
         Hazifeladat::destroy($id);
-        return redirect("/hazifeladatok");     
+        return redirect("hazifeladatok");
     }
 }

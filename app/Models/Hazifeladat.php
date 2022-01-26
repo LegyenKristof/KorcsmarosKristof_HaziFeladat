@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Hazifeladat extends Model
 {
     use HasFactory;
+
+    protected $fillable = ["url", "ertekeles", "pontszam"];
 }

@@ -14,12 +14,16 @@
 </head>
 <body>
     <table>
-        <thead>
+        <tr>
+            <td colspan="5"><a href="{{route('hazifeladatok.create')}}"><button style="width: 100%; height: 50px;font-size: 20pt;">Új házifeladat beadása</button></a></td>
+        </tr>
+        <tr>
             <th>ID</th>
             <th>URL</th>
             <th>Értékelés</th>
             <th>Pontszám</th>
-        </thead>
+            <th>Műveletek</th>
+        </tr>
         <tbody>
            @foreach ($hazifeladatok as $hazifeladat)
            <tr>
@@ -33,7 +37,7 @@
                     @method('DELETE')
                     <button type="submit">Törlés</button>
                 </form>
-                </td>  
+                </td>
            </tr>
            @endforeach
         </tbody>
