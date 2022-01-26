@@ -14,11 +14,9 @@ class HazifeladatFactory extends Factory
     public function definition()
     {
         return [
-            "feladat" => $this->faker->word(1),
-            "diak" => $this->faker->name(2),
             "url" => $this->faker->url(),
-            "ertekeles" => "",
-            "pontszam" => -1
+            "ertekeles" => $this->faker->text(100),
+            "pontszam" => $this->faker->numberBetween(0, 100)
         ];
     }
 }

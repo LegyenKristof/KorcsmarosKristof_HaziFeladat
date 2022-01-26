@@ -15,8 +15,6 @@ class CreateHazifeladatsTable extends Migration
     {
         Schema::create('hazifeladats', function (Blueprint $table) {
             $table->id();
-            $table->string("feladat");
-            $table->string("diak");
             $table->string("url");
             $table->string("ertekeles");
             $table->integer("pontszam");
